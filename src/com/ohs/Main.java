@@ -3,6 +3,7 @@ package com.ohs;
 
 import java.io.*;
 import java.util.Scanner;
+import java.util.Stack;
 
 public class Main {
 
@@ -27,13 +28,24 @@ public class Main {
             e.printStackTrace();
         }
 
-        int checkNum = sc.nextInt();
-        String s = sc.nextLine();
+        int caseNum = sc.nextInt();
+        sc.nextLine();
 
-        Parsing iter = new Parsing();
-        String temp = new String();
 
-        iter.myParsing(s);
+        for(int i=0; i<caseNum; i++) {
+            int checkNum = sc.nextInt();
+            String s = sc.nextLine();
+
+            //Parsing iter = new Parsing();
+            //String temp = new String();
+
+            Node root = new Node(s);
+            Tree tree = new Tree(root);
+            tree.traversal(checkNum);
+            System.out.println(tree.getFinalResult());
+        }
+
+
 
 
 
